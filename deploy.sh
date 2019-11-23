@@ -11,6 +11,15 @@ docker push tintuntint/multi-server:$SHA
 docker push tintuntint/multi-worker:$SHA
 
 kubectl apply -f k8s
+
 kubectl set image deployments/server-deployment server=tintuntint/multi-server:$SHA
 kubectl set image deployments/client-deployment client=tintuntint/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=tintuntint/multi-worker:$SHA
+
+#kubectl set image deployments/server-deployment server=tintuntint/multi-server:latest
+#kubectl set image deployments/client-deployment client=tintuntint/multi-client:latest
+#kubectl set image deployments/worker-deployment worker=tintuntint/multi-worker:latest
+
+#kubectl set image deployments/server-deployment server=stephengrider/multi-server:latest
+#kubectl set image deployments/client-deployment client=stephengrider/multi-client:latest
+#kubectl set image deployments/worker-deployment worker=stephengrider/multi-worker:latest
